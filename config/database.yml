@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: rtttest_production
-  username: rtttest
+  username: root
   password: <%= ENV['RTTTEST_DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
