@@ -39,4 +39,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-#gem 'rails-assets-jquery'
+#gem 'rails-assets-ember', '1.7.0'
+#gem 'rails-assets-handlebars', '1.3.0'
+
+gem 'ember-rails'
+gem 'ember-source', '1.5.0' # or the version you need
