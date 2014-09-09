@@ -1,0 +1,22 @@
+body {
+  font-size: 14px;
+}
+
+.chatinput {
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+
+  input[type="text"] {
+    //width: 100px;
+    right: 42px;
+    height: 100%;
+    left: 0;
+  }
+
+  input[type="submit"] {
+    height: 100%;
+    width: 40px;
+  }
+}
+

@@ -1,26 +1,28 @@
-<script>
-    /*$('#new_message').on('ajax:success', function (event, data) {
-     $('#messages').prepend($('<li />').text(data.text))
-     })*/
 
-
-
-</script>
 hey kids
-<%= form_for Message.new, :remote => true do |t| -%>
-    <%= t.text_field :text -%>
-    <%= t.submit -%>
-<%- end -%>
-
-<ul id="messages">
-    <%- @messages.reverse.each do |m| -%>
-    <li><%= render m -%></li>
+<div class="chatinput" id="chatinput">
+    <%= form_for Message.new, :remote => true do |t| -%>
+        <%= t.text_field :text -%>
+        <%= t.submit -%>
     <%- end -%>
-</ul>
+</div>
+
+<div class="chatcontents" id="chatcontents">
+    <ul id="messages">
+        <%- @messages.reverse.each do |m| -%>
+        <li><%= render m -%></li>
+        <%- end -%>
+    </ul>
+</div>
 <script>
+    // kickstart it!
     var update_interval = 5000,
             update_start_at,
             last_id = <%= @messages.last.id -%>;
 
     setTimeout(get_updates, update_interval)
+
+    $('#new_message').on('ajax:send', function (event, data) {
+        $('#new_message input[type=text]').val('');
+    })
 </script>
